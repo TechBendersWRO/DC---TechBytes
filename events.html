@@ -1,0 +1,431 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Olympics - Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+         
+         * {
+            box-sizing: border-box; 
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 123, 255, 0.658)), 
+            url('img.jpg') no-repeat center center/cover;
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+       
+     
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #FFD700; 
+        }
+
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Highlights Section */
+        .highlights {
+            padding: 5rem 2rem;
+            background-color: rgba(32, 32, 32, 0.9); 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-item {
+            background-color: #2E2E2E;
+            padding: 2rem;
+            border-radius: 10px;
+            width: calc(33% - 2rem);
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-10px);
+            background-color: #333;
+        }
+
+        .highlight-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .highlight-info h3 {
+            margin: 1rem 0 0.5rem;
+            font-size: 1.5rem;
+            color: #FF4500;
+        }
+
+        .highlight-info p {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+  
+        .footer {
+            background-color: #1c1c1c;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.1rem;
+        }
+
+    
+        @media (max-width: 768px) {
+            .highlight-item {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        
+        .hero:hover h1,
+        .hero:hover p {
+            transform: translate3d(var(--mouse-x), var(--mouse-y), 0);
+        }* {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 123, 255, 0.8)), 
+                        url('img.jpg') no-repeat center center/cover;
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            height: 100vh; 
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #FFD700; 
+        }
+
+       
+        .parallax-bg {
+            background: url('olympics-bg.jpg') no-repeat center center/cover;
+            height: 100vh;
+            transform: translateZ(-1px) scale(2); 
+        }
+
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        
+        .countdown {
+            font-size: 2rem;
+            margin-top: 1rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+      
+        #events {
+            padding: 3rem 1rem;
+            background-color: #f5f5f5;
+        }
+
+        #events h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #003366;
+        }
+
+        .event-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .event-item {
+            background-color: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .event-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .event-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .event-content {
+            padding: 1.5rem;
+        }
+
+        .event-content h3 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+            color: #003366;
+        }
+
+        .event-content p {
+            color: #555;
+        }
+
+        .event-content .event-date-time {
+            font-weight: bold;
+            color: #ff4500;
+        }
+
+        .event-content .event-venue {
+            font-style: italic;
+            color: #333;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background-color: #003366;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #ff4500;
+        }
+
+       
+        .footer {
+            background-color: #1c1c1c;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.1rem;
+        }
+
+
+        @media (max-width: 768px) {
+            .event-list {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="DC.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="athletes.html">Athletes</a>
+        <a href="medals.html">Medal Tally</a>
+       
+        <a href="about.html">About</a>
+    </div>
+
+    <div class="parallax-bg"></div> 
+
+
+
+
+
+    <section id="events">
+        <h2>Upcoming Events</h2>
+        <div class="event-list">
+            <div class="event-item">
+                <img src="athletics.jpeg" alt="Athletics">
+                <div class="event-content">
+                    <h3>100m Men's Sprint Final</h3>
+                    <p class="event-date-time">Date: July 30, 2024 | Time: 7:00 PM</p>
+                    <p class="event-venue">Venue: Stade de France</p>
+                    <p>Watch the fastest men in the world compete for the gold medal in the thrilling 100m sprint final.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="event-item">
+                <img src="gym..jpeg" alt="Gymnastics">
+                <div class="event-content">
+                    <h3>Women's Artistic Gymnastics</h3>
+                    <p class="event-date-time">Date: July 28, 2024 | Time: 5:00 PM</p>
+                    <p class="event-venue">Venue: Accor Arena</p>
+                    <p>Experience the grace and power of the world's top female gymnasts as they compete for Olympic glory.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="event-item">
+                <img src="swimming.jpeg" alt="Swimming">
+                <div class="event-content">
+                    <h3>200m Butterfly Men's Final</h3>
+                    <p class="event-date-time">Date: July 29, 2024 | Time: 8:00 PM</p>
+                    <p class="event-venue">Venue: Aquatics Centre</p>
+                    <p>Don't miss the intense competition in the men's 200m butterfly final, a true test of endurance and technique.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="event-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5aH5f4grS3hsCXPa-MyM371eqzZbzzvB-Eg&s" alt="Basketball">
+                <div class="event-content">
+                    <h3>Men's Basketball Final</h3>
+                    <p class="event-date-time">Date: August 2, 2024 | Time: 9:00 PM</p>
+                    <p class="event-venue">Venue: Bercy Arena</p>
+                    <p>Watch the best basketball teams in the world battle it out for the ultimate prize in sports.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <div class="footer">
+        <p>2024 Olympics © All rights reserved</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medal Tally - 2024 Olympics</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(4, 14, 26, 0.658)), 
+                        url('img.jpg') no-repeat center center/cover;
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #FFD700;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .highlights {
+            padding: 5rem 2rem;
+            background-color: rgba(32, 32, 32, 0.9);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-item {
+            background-color: #2E2E2E;
+            padding: 2rem;
+            border-radius: 10px;
+            width: calc(33% - 2rem);
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-10px);
+            background-color: #333;
+        }
+
+        .highlight-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .highlight-info h3 {
+            margin: 1rem 0 0.5rem;
+            font-size: 1.5rem;
+            color: #FF4500;
+        }
+
+        .highlight-info p {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+        #medal-tally {
+            padding: 2rem;
+            text-align: center;
+        }
+
+        #medal-tally h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tally-table table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .tally-table th, .tally-table td {
+            padding: 15px 20px;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .tally-table th {
+            background-color: rgba(255, 255, 255, 0.1);
+            font-size: 1.2rem;
+        }
+
+        .tally-table td {
+            font-size: 1rem;
+        }
+
+        .tally-table tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .tally-table tr:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .footer {
+            background-color: #1c1c1c;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .highlight-item {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 123, 255, 0.8)),
+                url('img.jpg') no-repeat center center/cover;
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #FFD700;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #team {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            margin-top: 1rem;
+        }
+
+        #team h2 {
+            margin-bottom: 1rem;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .member {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #1c1c1c;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            #team {
+                padding: 1rem;
+            }
+
+            .member {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="DC.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="athletes.html">Athletes</a>
+        <a href="medals.html">Medal Tally</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <div class="hero">
+        <h1>2024 Olympics</h1>
+        <p>Join us in celebrating the world's greatest athletes!</p>
+    </div>
+
+    
+
+    <div id="medal-tally">
+        <h1>Medal Tally</h1>
+        <section id="medal-tally">
+            <h1>Medal Tally</h1>
+            <div class="tally-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Country</th>
+                            <th>Gold</th>
+                            <th>Silver</th>
+                            <th>Bronze</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>USA</td>
+                            <td>39</td>
+                            <td>41</td>
+                            <td>33</td>
+                            <td>113</td>
+                        </tr>
+                        <tr>
+                            <td>China</td>
+                            <td>38</td>
+                            <td>32</td>
+                            <td>18</td>
+                            <td>88</td>
+                        </tr>
+                        <tr>
+                            <td>Japan</td>
+                            <td>27</td>
+                            <td>14</td>
+                            <td>17</td>
+                            <td>58</td>
+                        </tr>
+                        <tr>
+                            <td>Great Britain</td>
+                            <td>22</td>
+                            <td>21</td>
+                            <td>22</td>
+                            <td>65</td>
+                        </tr>
+                        <tr>
+                            <td>Australia</td>
+                            <td>17</td>
+                            <td>7</td>
+                            <td>22</td>
+                            <td>46</td>
+                        </tr>
+                        <tr>
+                            <td>Germany</td>
+                            <td>10</td>
+                            <td>11</td>
+                            <td>16</td>
+                            <td>37</td>
+                        </tr>
+                        <tr>
+                            <td>France</td>
+                            <td>10</td>
+                            <td>12</td>
+                            <td>11</td>
+                            <td>33</td>
+                        </tr>
+                        <tr>
+                            <td>Netherlands</td>
+                            <td>10</td>
+                            <td>12</td>
+                            <td>14</td>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <td>Italy</td>
+                            <td>10</td>
+                            <td>10</td>
+                            <td>20</td>
+                            <td>40</td>
+                        </tr>
+                        <tr>
+                            <td>Russia</td>
+                            <td>8</td>
+                            <td>14</td>
+                            <td>14</td>
+                            <td>36</td>
+                        </tr>
+                        <tr>
+                            <td>Canada</td>
+                            <td>7</td>
+                            <td>6</td>
+                            <td>11</td>
+                            <td>24</td>
+                        </tr>
+                        <tr>
+                            <td>Brazil</td>
+                            <td>7</td>
+                            <td>5</td>
+                            <td>9</td>
+                            <td>21</td>
+                        </tr>
+                        <tr>
+                            <td>Spain</td>
+                            <td>3</td>
+                            <td>8</td>
+                            <td>6</td>
+                            <td>17</td>
+                        </tr>
+                        <tr>
+                            <td>India</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>4</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>South Korea</td>
+                            <td>6</td>
+                            <td>4</td>
+                            <td>6</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>New Zealand</td>
+                            <td>7</td>
+                            <td>6</td>
+                            <td>2</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>South Africa</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>5</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>Turkey</td>
+                            <td>3</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>Mexico</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>3</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>Colombia</td>
+                            <td>3</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Norway</td>
+                            <td>1</td>
+                            <td>4</td>
+                            <td>4</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>Finland</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>5</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>Sweden</td>
+                            <td>2</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>13</td>
+                        </tr>
+                        <tr>
+                            <td>Philippines</td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Egypt</td>
+                            <td>0</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>Iran</td>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>6</td>
+                        </tr>
+                      
+                    </tbody>
+                </table>
+            </div>
+        </section>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Olympic Games. All rights reserved.</p>
+    </div>
+</body>
+</html>

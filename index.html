@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>2024 Olympics</title>
+    <style>
+         * {
+            box-sizing: border-box; 
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 123, 255, 0.658)), 
+            url('img.jpg') no-repeat center center/cover;
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+ 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1rem 2rem;
+
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #FFD700; 
+        }
+
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Highlights Section */
+        .highlights {
+            padding: 5rem 2rem;
+            background-color: rgba(32, 32, 32, 0.9); 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-item {
+            background-color: #2E2E2E;
+            padding: 2rem;
+            border-radius: 10px;
+            width: calc(33% - 2rem);
+            transition: transform 0.3s, background-color 0.3s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-10px);
+            background-color: #333;
+        }
+
+        .highlight-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .highlight-info h3 {
+            margin: 1rem 0 0.5rem;
+            font-size: 1.5rem;
+            color: #FF4500; 
+        }
+
+        .highlight-info p {
+            color: #ccc;
+            font-size: 1rem;
+        }
+
+ 
+        .footer {
+            background-color: #1c1c1c;
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .highlight-item {
+                width: 100%;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        
+        .hero:hover h1,
+        .hero:hover p {
+            transform: translate3d(var(--mouse-x), var(--mouse-y), 0);
+        }
+    </style>
+</head>
+
+<body>
+   
+   <div class="navbar">
+    <a href="DC.html">Home</a>
+    <a href="events.html">Events</a>
+    <a href="athletes.html">Athletes</a>
+    <a href="medals.html">Medal Tally</a>
+   
+    <a href="about.html">About</a>
+</div>
+
+
+    <section class="hero" id="home">
+        <h1>2024 Olympics</h1>
+        <p>The Games of Unity and Excellence</p>
+    </section>
+
+   
+    <section class="highlights" id="highlights">
+        <h2>Event Highlights</h2>
+        <div class="highlight-item">
+            <img src="event1.jpg" alt="10m Air Pistol Event">
+            <div class="highlight-info">
+                <h3>10m Air Pistol</h3>
+                <p>Manu Bhaker won the first medal for India in the women's 10 m air pistol event. She won a bronze medal and became the first woman shooter to win an Olympic medal for India.</p>
+            </div>
+        </div>
+        <div class="highlight-item">
+            <img src="event2.jpg" alt="Swimming Event">
+            <div class="highlight-info">
+                <h3>Shooting</h3>
+                <p>In the mixed 10 m air pistol team event, Manu Bhaker partnered with Sarabjot Singh to win another bronze medal, becoming the first Indian since independence to win two medals in a single Olympics.</p>
+            </div>
+        </div>
+        <div class="highlight-item">
+            <img src="event3.jpg" alt="Track and Field Event">
+            <div class="highlight-info">
+                <h3>Men's 50 m Rifle Three Positions
+                </h3>
+                <p>Swapnil Kusale won another bronze medal in the men's 50 m rifle three positions event, marking India's seventh shooting medal across the Olympic Games.</p>
+            </div>
+        </div>
+        <div class="highlight-item">
+            <img src="event4.jpg" alt="Gymnastics Event">
+            <div class="highlight-info">
+                <h3>Javelin Throw</h3>
+                <p>Neeraj Chopra won a silver medal in the men's javelin throw event, becoming the fifth individual multiple medalist for India and the first to win a gold and silver combination.</p>
+            </div>
+        </div>
+        <div class="highlight-item">
+            <img src="event5.jpg" alt="Football Match">
+            <div class="highlight-info">
+                <h3>Men's Hockey</h3>
+                <p>Men's Hockey Team won the bronze medal for India making history.</p>
+            </div>
+        </div>
+    </section>
+
+   <!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 TechBytes. All rights reserved.</p>
+</footer>
+
+    <script>
+        const hero = document.querySelector('.hero');
+
+        hero.addEventListener('mousemove', (e) => {
+            const width = hero.offsetWidth;
+            const height = hero.offsetHeight;
+            const offsetX = 0.5 - e.pageX / width;
+            const offsetY = 0.5 - e.pageY / height;
+
+            const moveX = offsetX * 15 + 'px';
+            const moveY = offsetY * 15 + 'px';
+
+            document.documentElement.style.setProperty('--mouse-x', moveX);
+            document.documentElement.style.setProperty('--mouse-y', moveY);
+        });
+
+        hero.addEventListener('mouseleave', () => {
+            document.documentElement.style.setProperty('--mouse-x', '0px');
+            document.documentElement.style.setProperty('--mouse-y', '0px');
+        });
+    </script>
+
+</body>
+
+</html>

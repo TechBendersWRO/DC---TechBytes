@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athletes - 2024 Olympics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 123, 255, 0.658)), 
+            url('img.jpg') no-repeat center center/cover;
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #FFD700;
+        }
+
+        #athletes {
+            padding: 4rem 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        #athletes h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .athlete-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .athlete-item {
+            background-color: #fff;
+            color: #050505;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: calc(33% - 20px);
+            text-align: left;
+            border-radius: 8px;
+            overflow: hidden;
+            min-width: 250px;
+        }
+
+        .athlete-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .athlete-info {
+            padding: 1rem;
+        }
+
+        .athlete-info h3 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .athlete-info p {
+            margin-bottom: 10px;
+        }
+
+        .athlete-info .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: rgb(10, 8, 8);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .athlete-info .btn:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .athlete-item {
+                width: 100%;
+            }
+
+            #athletes h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <a href="DC.html">Home</a>
+            <a href="events.html">Events</a>
+            <a href="athletes.html">Athletes</a>
+            <a href="medals.html">Medal Tally</a>
+            <a href="about.html">About</a>
+        </div>
+    </header>
+
+    <section id="athletes">
+        <h1>Meet the Athletes</h1>
+        <div class="athlete-list">
+            <div class="athlete-item">
+                <img src="usain-bolt.jpeg" alt="Usain Bolt">
+                <div class="athlete-info">
+                    <h3>Usain Bolt</h3>
+                    <p class="athlete-sport">Sport: Athletics (100m, 200m)</p>
+                    <p class="athlete-country">Country: Jamaica</p>
+                    <p class="athlete-achievements">Achievements: 8-time Olympic Gold Medalist, World Record Holder</p>
+                    <a href="https://en.wikipedia.org/wiki/Usain_Bolt" class="btn">View Profile</a>
+                </div>
+            </div>
+
+            <div class="athlete-item">
+                <img src="simone-biles.jpeg" alt="Simone Biles">
+                <div class="athlete-info">
+                    <h3>Simone Biles</h3>
+                    <p class="athlete-sport">Sport: Artistic Gymnastics</p>
+                    <p class="athlete-country">Country: USA</p>
+                    <p class="athlete-achievements">Achievements: 4-time Olympic Gold Medalist, 19-time World Champion</p>
+                    <a href="https://en.wikipedia.org/wiki/Simone_Biles" class="btn">View Profile</a>
+                </div>
+            </div>
+
+            <div class="athlete-item">
+                <img src="michael-philips.jpeg" alt="Michael Phelps">
+                <div class="athlete-info">
+                    <h3>Michael Phelps</h3>
+                    <p class="athlete-sport">Sport: Swimming (Butterfly, Freestyle)</p>
+                    <p class="athlete-country">Country: USA</p>
+                    <p class="athlete-achievements">Achievements: 23-time Olympic Gold Medalist, World Record Holder</p>
+                    <a href="https://en.wikipedia.org/wiki/Michael_Phelps" class="btn">View Profile</a>
+                </div>
+            </div>
+
+          
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Olympics. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+
+ 

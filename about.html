@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>About Us - 2024 Olympics</title>
+    <style>
+         * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.8), rgba(0, 123, 255, 0.658)), 
+            url('img.jpg') no-repeat center center/cover;
+            color: #fff;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1rem 2rem;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #FFD700;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+            animation: fadeInUp 1.5s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 1rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+            animation: fadeInUp 2s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        #team {
+            padding: 2rem 1rem;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            margin-top: 1rem;
+        }
+
+        #team h2 {
+            margin-bottom: 1rem;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .member {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background-color: #1c1c1c;
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            #team {
+                padding: 1rem;
+            }
+
+            .member {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <a href="DC.html">Home</a>
+        <a href="events.html">Events</a>
+        <a href="athletes.html">Athletes</a>
+        <a href="medals.html">Medal Tally</a>
+        <a href="about.html">About</a>
+    </div>
+
+    <section class="hero" id="home">
+        <h1>About Us</h1>
+        <p>Meet the Team Behind the Olympics 2024 Website</p>
+    </section>
+
+    <section id="team">
+        <h2>Team Members</h2>
+        <div class="team-members">
+            <div class="member">
+                <h3>Kanishk K.R</h3>
+            </div>
+            <div class="member">
+                <h3>Rishabh</h3>
+            </div>
+            <div class="member">
+                <h3>Rishe S</h3>
+            </div>
+            <div class="member">
+                <h3>Harish Raghav V</h3>
+            </div>
+        </div>
+        <div>
+            For Code Details refer:
+            https://github.com/KanishkKR2010/DC-TechBytes
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 TechBytes. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hero = document.querySelector('.hero');
+
+        hero.addEventListener('mousemove', (e) => {
+            const width = hero.offsetWidth;
+            const height = hero.offsetHeight;
+            const offsetX = 0.5 - e.pageX / width;
+            const offsetY = 0.5 - e.pageY / height;
+
+            const moveX = offsetX * 15 + 'px';
+            const moveY = offsetY * 15 + 'px';
+
+            document.documentElement.style.setProperty('--mouse-x', moveX);
+            document.documentElement.style.setProperty('--mouse-y', moveY);
+        });
+
+        hero.addEventListener('mouseleave', () => {
+            document.documentElement.style.setProperty('--mouse-x', '0px');
+            document.documentElement.style.setProperty('--mouse-y', '0px');
+        });
+    </script>
+</body>
+
+</html>
